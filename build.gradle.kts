@@ -41,7 +41,7 @@ kotlin {
 
 android {
     namespace = "com.j.glossycanvas.core"
-    compileSdk = 37 
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
