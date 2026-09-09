@@ -1,47 +1,47 @@
-/*
- * ╭────────────────────────────────────────────╮
- * │             Glossy Canvas Core             │
- * │--------------------------------------------│
- * │  Licensed under the GNU GPL v3.0           │
- * │  Crafted for expressive music experience   │
- * ╰────────────────────────────────────────────╯
- */
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.androidLibrary)
+    kotlin("multiplatform") version "2.0.20"
+    kotlin("plugin.serialization") version "2.0.20"
+    id("com.android.library") version "8.5.0"
+    id("maven-publish") 
 }
 
 kotlin {
     androidTarget {
+        publishLibraryVariants("release") 
+        
         compilations.all {
             kotlinOptions { jvmTarget = "1.8" }
         }
     }
 
-    // अगर फ्यूचर में iOS या Desktop का प्लान हो, तो यहाँ उनके टारगेट ऐड कर सकते हो
-
     sourceSets {
-        commonMain.dependencies {
-            implementation(libs.kotlinx.coroutines.core)
-            implementation(libs.kotlinx.serialization.json)
-            
-            implementation(libs.ktor.client.core)
-            implementation(libs.ktor.client.content.negotiation)
-            implementation(libs.ktor.serialization.kotlinx.json)
-            implementation(libs.ktor.client.encoding)
+        val commonMain by getting {
+            dependencies {
+                // Latest Coroutines & Serialization
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
+                
+                // Latest Ktor 3.0.0
+                implementation("io.ktor:ktor-client-core:3.0.0")
+                implementation("io.ktor:ktor-client-content-negotiation:3.0.0")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:3.0.0")
+                implementation("io.ktor:ktor-client-encoding:3.0.0")
+            }
         }
         
-        androidMain.dependencies {
-            implementation(libs.ktor.client.okhttp)
+        val androidMain by getting {
+            dependencies {
+                // Android के लिए OkHttp इंजन
+                implementation("io.ktor:ktor-client-okhttp:3.0.0")
+            }
         }
     }
 }
 
 android {
     namespace = "com.j.glossycanvas.core"
-    compileSdk = 34
+    compileSdk = 37 
 
     defaultConfig {
         minSdk = 24
