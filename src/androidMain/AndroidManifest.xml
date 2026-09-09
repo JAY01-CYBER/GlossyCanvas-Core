@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ ╭────────────────────────────────────────────╮
+  ~ │             Glossy Canvas Core             │
+  ~ │--------------------------------------------│
+  ~ │  Licensed under the GNU GPL v3.0           │
+  ~ │  Crafted for expressive music experience   │
+  ~ ╰────────────────────────────────────────────╯
+  -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- नेटवर्क रिक्वेस्ट्स के लिए इंटरनेट परमिशन -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
