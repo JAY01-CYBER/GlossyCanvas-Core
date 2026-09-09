@@ -1,9 +1,4 @@
-# ╭────────────────────────────────────────────╮
-# │             Glossy Canvas Core             │
-# │--------------------------------------------│
-# │  Licensed under the GNU GPL v3.0           │
-# │  Crafted for expressive music experience   │
-# ╰────────────────────────────────────────────╯
+
 
 [versions]
 agp = "8.5.0"
