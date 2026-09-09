@@ -1,11 +1,4 @@
-/*
- * ╭────────────────────────────────────────────╮
- * │             Glossy Canvas Core             │
- * │--------------------------------------------│
- * │  Licensed under the GNU GPL v3.0           │
- * │  Crafted for expressive music experience   │
- * ╰────────────────────────────────────────────╯
- */
+
 
 pluginManagement {
     repositories {
